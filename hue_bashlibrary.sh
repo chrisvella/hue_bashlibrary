@@ -183,7 +183,9 @@ function bridge_link {
 	then
 		printf "Trying to establish link with your hue bridge (username: $username)...\n\n"
 		
-		hue_post_apiurl "{\"devicetype\":\"$devicetype\",\"username\":\"$username\"}" "" "print"
+		hue_post_apiurl "{\"devicetype\":\"$devicetype#$username\"}" "" "print"
+		printf "Use the returned username string in you config!"
+
 	else
 		printf "Aborted.\n"
 	fi
